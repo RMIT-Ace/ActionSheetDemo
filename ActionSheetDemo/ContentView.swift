@@ -24,20 +24,20 @@ struct ContentView: View {
 }
 
 struct SheetPopupView: View {
+    let choices: [String] = ["A", "B", "C"]
     var body: some View {
         ZStack {
             Color.blue.ignoresSafeArea(edges: .all)
             Image("robot")
             VStack {
                 List {
-                    Text("A")
-                        .listRowBackground(Color.red.opacity(0.4))
-                    Text("B")
-                        .listRowBackground(Color.green.opacity(0.4))
-                    Text("C")
-                        .listRowBackground(Color.blue.opacity(0.4))
+                    ForEach(choices, id: \.self) { choice in
+                        Text(choice)
+                            .listRowBackground(Color.green.opacity(0.4))
+                    }
                 }
                 .listStyle(.plain)
+                .listRowSpacing(3.0)
                 .frame(width: 300, height: 200)
             }
         }
