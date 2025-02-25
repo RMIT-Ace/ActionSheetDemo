@@ -24,7 +24,7 @@ struct ContentView: View {
 }
 
 struct SheetPopupView: View {
-    let choices: [String] = ["A", "B", "C"]
+    let choices: [String] = ["A", "B", "C", "D"]
     var body: some View {
         ZStack {
             Color.blue.ignoresSafeArea(edges: .all)
