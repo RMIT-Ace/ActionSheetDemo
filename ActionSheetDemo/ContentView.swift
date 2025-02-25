@@ -18,7 +18,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingSheet) {
             SheetPopupView()
-                .presentationDetents([.height(500)])
+                .presentationDetents([.height(400)])
         }
     }
 }
