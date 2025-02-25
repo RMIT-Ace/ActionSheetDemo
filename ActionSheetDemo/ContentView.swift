@@ -8,17 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingSheet = false
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button("Sheet") {
+                showingSheet = true
+            }
         }
-        .padding()
+        .sheet(isPresented: $showingSheet) {
+            SheetPopupView()
+                .presentationDetents([.height(500)])
+        }
+    }
+}
+
+struct SheetPopupView: View {
+    var body: some View {
+        ZStack {
+            Color.blue.ignoresSafeArea(edges: .all)
+            Image("robot")
+        }
     }
 }
 
 #Preview {
     ContentView()
+}
+
+#Preview {
+    SheetPopupView()
 }
