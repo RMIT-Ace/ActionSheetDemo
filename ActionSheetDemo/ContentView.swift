@@ -28,6 +28,18 @@ struct SheetPopupView: View {
         ZStack {
             Color.blue.ignoresSafeArea(edges: .all)
             Image("robot")
+            VStack {
+                List {
+                    Text("A")
+                        .listRowBackground(Color.red.opacity(0.4))
+                    Text("B")
+                        .listRowBackground(Color.green.opacity(0.4))
+                    Text("C")
+                        .listRowBackground(Color.blue.opacity(0.4))
+                }
+                .listStyle(.plain)
+                .frame(width: 300, height: 200)
+            }
         }
     }
 }
